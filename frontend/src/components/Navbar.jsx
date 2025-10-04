@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-
 export default function Navbar(){
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -14,8 +13,10 @@ export default function Navbar(){
   return (
     <header className="navbar">
       <div className="nav-left">
-        <div className="logo">BR</div>
-        <div className="site-title">BookReview</div>
+        <div className="logo">
+  <img src="/logo.png" alt="BookReview Logo" className="logo-img" />
+</div>
+        <div className="site-title">Plot Pulse</div>
       </div>
       <div className="nav-links">
         <Link to="/">Home</Link>

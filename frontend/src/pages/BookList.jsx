@@ -40,9 +40,9 @@ export default function BookList() {
       </div>
 
       <div style={{ marginTop: 18, display:'flex', justifyContent:'center', alignItems:'center', gap:12 }}>
-        <button disabled={booksData.page<=1} onClick={()=>fetch(booksData.page-1)}>Prev</button>
+        <button className="btnn" disabled={booksData.page<=1} onClick={()=>fetch(booksData.page-1)}>Prev</button>
         <span>{booksData.page} / {booksData.totalPages}</span>
-        <button disabled={booksData.page>=booksData.totalPages} onClick={()=>fetch(booksData.page+1)}>Next</button>
+        <button className="btnn" disabled={booksData.page>=booksData.totalPages} onClick={()=>fetch(booksData.page+1)}>Next</button>
       </div>
     </div>
   );
