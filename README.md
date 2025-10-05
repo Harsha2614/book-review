@@ -72,30 +72,7 @@ npm install
 
 npm start
 
-🧩 Folder Structure
-plotpulse/
-│
-├── backend/
-│   ├── server.js
-│   ├── models/
-│   ├── routes/
-│   ├── controllers/
-│   └── middleware/
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── pages/
-│   │   ├── App.jsx
-│   │   ├── index.js
-│   │   └── styles/
-│   │       └── main.css
-│   └── package.json
-│
-└── README.md
-
-💡 Future Enhancements
+## 💡 Future Enhancements
 
 📸 Profile picture support
 
