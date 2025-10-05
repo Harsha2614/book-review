@@ -46,7 +46,7 @@ exports.deleteBook = async (req, res) => {
   const book = await Book.findById(id);
   if (!book) return res.status(404).json({ message: 'Not found' });
   if (!book.addedBy.equals(req.user._id)) return res.status(403).json({ message: 'Forbidden' });
-  await book.remove();
+  await book.deleteOne();
   await Review.deleteMany({ bookId: book._id });
   res.json({ message: 'Deleted' });
 };

@@ -8,6 +8,7 @@ import AddEditBook from './pages/AddEditBook';
 import BookDetails from './pages/BookDetails';
 import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
+import WelcomePage from './pages/WelcomePage';
 import './styles.css';
 
 export default function App() {
@@ -17,7 +18,11 @@ export default function App() {
         <Navbar />
         <main className="container">
           <Routes>
-            <Route path="/" element={<BookList />} />
+            {/* 👇 Welcome page as home page */}
+            <Route path="/" element={<WelcomePage />} />
+
+            {/* Book pages */}
+            <Route path="/books" element={<BookList />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/add-book" element={<ProtectedRoute><AddEditBook /></ProtectedRoute>} />
@@ -25,7 +30,7 @@ export default function App() {
             <Route path="/book/:id" element={<BookDetails />} />
           </Routes>
         </main>
-        <footer className="footer">Built with ❤️ · BookReview Platform</footer>
+        <footer className="footer">Built with ❤️ · PlotPulse</footer>
       </Router>
     </AuthProvider>
   );

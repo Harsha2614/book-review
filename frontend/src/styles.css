@@ -19,6 +19,7 @@ body {
   color: #f0cf16;
 }
 
+/* ───────── NAVBAR ───────── */
 .navbar {
   background: linear-gradient(90deg, var(--blue-600), var(--blue-700));
   color: white;
@@ -38,7 +39,6 @@ body {
   gap: 12px;
 }
 
-
 .logo {
   width: 44px;
   height: 44px;
@@ -50,9 +50,8 @@ body {
   font-weight: 700;
   color: white;
   box-shadow: none;
-  border-radius: 4px;
+  cursor: pointer;
 }
-
 
 .logo img {
   width: 100%;
@@ -64,12 +63,17 @@ body {
 .site-title {
   font-weight: 700;
   font-size: 18px;
+  color:#e8edf8
+}
+
+.nav-links {
+  display: flex;
+  gap: 14px;
 }
 
 .nav-links a {
   color: rgba(211, 233, 11, 0.95);
   text-decoration: none;
-  margin-right: 14px;
   font-weight: 600;
 }
 
@@ -98,8 +102,8 @@ body {
   background-color: #111827;
 }
 
-.btnn{
-    background: white;
+.btnn {
+  background: white;
   color: var(--blue-700);
   padding: 8px 12px;
   border-radius: 8px;
@@ -110,7 +114,17 @@ body {
   color: rgb(17, 19, 17);
 }
 
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
 
+  .container {
+    padding: 0 12px;
+  }
+}
+
+/* ───────── CONTAINERS ───────── */
 .container {
   max-width: 1100px;
   margin: 28px auto;
@@ -124,6 +138,7 @@ body {
   box-shadow: var(--shadow);
 }
 
+/* ───────── FORMS ───────── */
 .form-card {
   max-width: 720px;
   margin: 20px auto;
@@ -169,6 +184,7 @@ textarea {
   margin-top: 8px;
 }
 
+/* ───────── BOOK CARDS ───────── */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -195,6 +211,7 @@ textarea {
   color: var(--muted);
 }
 
+/* ───────── REVIEWS ───────── */
 .reviews {
   margin-top: 16px;
   display: flex;
@@ -216,6 +233,7 @@ textarea {
   margin-top: 40px;
 }
 
+/* ───────── BUTTONS & MISC ───────── */
 .numb {
   margin-top: 12px;
   color: var(--clr);
@@ -266,12 +284,131 @@ textarea {
   font-size: 15px;
 }
 
-@media (max-width: 600px) {
-  .nav-links {
-    display: none;
-  }
+/* ───────── WELCOME PAGE ───────── */
+.welcome-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: white;
+}
 
-  .container {
-    padding: 0 12px;
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.welcome-logo img {
+  width: 100px;
+  height: 100px;
+}
+
+.welcome-title {
+  font-size: 2.5rem;
+  font-family: 'Georgia', serif;
+  margin: 0;
+}
+
+.welcome-tagline {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.welcome-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.welcome-btn {
+  min-width: 100px;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+/* Floating logo animation */
+.floating-logo img {
+  width: 120px;
+  height: 120px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Zoom in effect */
+.zoom-in {
+  animation: zoomIn 1.5s ease forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
   }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide up effect */
+.slide-up {
+  opacity: 0;
+  animation: slideUp 1.6s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in for buttons */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Scrolling text */
+.scrolling-text-container {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.scrolling-text {
+  display: inline-block;
+  font-size: 1rem;
+  color: #fff;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
