@@ -38,8 +38,8 @@ It combines elegant design with smooth animations and a secure authentication sy
 
 ## 🚀 Getting Started
 
-### 1️⃣ Clone the Repository
-```bash
+1️⃣ Clone the Repository
+
 git clone https://github.com/Harsha2614/book-review.git
 cd book-review
 
